@@ -1,0 +1,10 @@
+\begin{thebibliography}{1}
+
+\bibitem{DUMMY:1}
+J.~Doe, ``The book without title,'' 2100.
+
+\bibitem{DUMMY:2}
+J.~Hoe, {\em The Book without Title}.
+\newblock Dummy Publisher, 2100.
+
+\end{thebibliography}
