@@ -1,0 +1,14 @@
+\begin {longtable}{@{}ll>{\hsize =\vhAuthorColWidth }X>{\hsize =\vhChangeColWidth }X@{}}
+\textbf {\vhversionname }
+ & \textbf {\vhdatename }
+ & \textbf {\vhauthorname }
+ & \textbf {\vhchangename }\\[1ex]
+1.0
+ & \printdate {09/14/2015}
+ & \listset {Olivier Ma}
+ & added a comma to the poem.\\
+1.1
+ & \printdate {09/15/2015}
+ & \listset {Olivier Ma}
+ & comma deleted.\\
+\end {longtable}
