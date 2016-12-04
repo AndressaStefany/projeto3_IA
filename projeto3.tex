@@ -28,6 +28,8 @@
     emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
     %emph=[2]{word1,word2}, emphstyle=[2]{style},    
 }
+\usepackage[hidelinks]{hyperref}
+
 \begin{document}
 	\begin{titlepage}
 	\centering
@@ -56,14 +58,14 @@
 	\newpage
 	\section{Resumo}
 	\paragraph{}
-	\hspace{8pt} A problemática é a cerca de um robô, o qual não tem conhecimento prévio do ambiente que se encontra. O seu objetivo é se deslocar de um ponto de origem até um ponto de destino, os quais são coordenadas conhecidas, sem colidir com as paredes. Além disso, o robô faz uso de um sensor para orientá-lo sobre os espaços livres, o sonar.
+	\hspace{8pt}A problemática é a cerca de um robô, o qual não tem conhecimento prévio do ambiente que se encontra. O seu objetivo é se deslocar de um ponto de origem até um ponto de destino, os quais são coordenadas conhecidas, sem colidir com as paredes. Além disso, o robô faz uso de um sensor para orientá-lo sobre os espaços livres, o sonar.
 		
-	\hspace{8pt} Como solução, este trabalho aborda uma das técnicas de busca da Inteligência Artifical: o Algoritmo Genético, que tem como finalidade indicar o caminho que o robô deve percorrer no ambiente minimizando ou excluindo as colisões. 
+	\hspace{8pt}Como solução, este trabalho aborda uma das técnicas de busca da Inteligência Artifical: o Algoritmo Genético, que tem como finalidade indicar o caminho que o robô deve percorrer no ambiente minimizando ou excluindo as colisões. 
 		
 	\newpage	
 	\section{Descrição do Problema}
-	\paragraph{} \hspace{8pt}
-	Um robô deve percorrer o seguinte ambiente com a utilização de um sonar, o qual fornece as distâncias livres em sua frente, trás, esquerda e direita.
+	\paragraph{}
+	\hspace{8pt}Um robô deve percorrer o seguinte ambiente com a utilização de um sonar, o qual fornece as distâncias livres em sua frente, trás, esquerda e direita.
 	
 	\begin{figure}[h]
 		\graphicspath{ {resultados/} }		
@@ -72,22 +74,28 @@
 		\label{fig:numeros}
 	\end{figure}
 		
-	\paragraph{}\hspace{8pt}
-	Sabendo-se que o robô deve sair do ponto de partida (b1) e chegar a um outro ponto (b2) do ambiente mostrado acima de modo que as colisões sejam mínimas ou inexistentes, percebe-se a problemática, pois o cenário possui obstáculos e não é de conhecimento do robô.
+	\paragraph{}
+	\hspace{8pt}Sabendo-se que o robô deve sair do ponto de partida (b1) e chegar a um outro ponto (b2) do ambiente mostrado acima de modo que as colisões sejam mínimas ou inexistentes, percebe-se a problemática, pois o cenário possui obstáculos e não é de conhecimento do robô.
 	
 	\hspace{8pt}Para a realização desse percurso, foi utilizado Algoritmo Genético, porém, mesmo assim, pode aparecer o caso em que o robô tenta atravessar a parede, como também, ande de forma adjacente à parede.
 	
 	\hspace{8pt}A principal dificuldade é encontrar as melhores posições que o robô pode assumir levando-se em conta os limites do espaço, que nesse caso, são as paredes presentes no cenário.
 	
 	\newpage	
-	\section{Estrategia}
+	\section{Estratégia}
 	\paragraph{}
 
 	\hspace{8pt}Como se faz necessário que o robô saia do ponto $ b_1 $ e chegue em $ b_2 $, onde o percuso possui obstáculos desconhecidos por ele, fez-se uma estratégia que define outros objetivos durante esse percurso, ou seja, $ b_2 $ será o ponto de chegada global e, ao passo que o robô se desloca, são gerados pontos de chegada locais.
 	
 	\hspace{8pt}Para a escolha das melhores posições que o robô deve assumir e assim possa chegar nos pontos de chegada locais, usa-se os valores do sensor sonar, com esses valores delimita-se os pontos que o robô pode se mover, após isso, o Algoritimo Genético escolhe o melhor ponto para o robô ir com base na distância para o destino. A seguir, são calculadas as velocidades linear e ângular necessárias para o robô chegar naquele ponto, esse processo é repetido várias vezes.
 	
-	\hspace{8pt} Os limites são determinado por um quadrado em volta da posição do robo que foi calculado da seguinte forma, com os valores dos sensores, frente(se), traz(st), direito(sd), esquerdo(se), criando duas variaveis aleatorias a e b e fazendo elas variarem entre 0 e 1 calculamos os possiveis pontos x e y que o robo pode ir da seguinte forma $ y = a(se+sd) - sd $ e $ x = b(sf+st) - st $ apos isso são aplicados a esses pontos a rotação e o deslocamento para ficarem na orientação do robo. Assim os novos pontos $ x' $ e $ y ' $ são $ x'= xcos(ang\_robo)-ysin(ang\_robo)+pos\_robo $ e $ y'= xsin(ang\_robo)+ycos(ang\_robo)+pos\_robo $. Este processo pode ser visto nas figuras \ref{fig:range1} e \ref{fig:range2}.
+
+	\hspace{8pt}Os limites são determinados por um quadrado em volta da posição do robô que foi calculado da seguinte forma, com os valores dos sensores, frente(se), trás(st), direito(sd), esquerdo(se), criando duas variáveis aleatórias, a e b, e fazendo elas variarem entre 0 e 1, calculamos os possíveis pontos x e y que o robô pode ir da seguinte forma:
+	\begin{center}	
+	 	$ y = a*(se+sd) - sd $ e $ x = b*(sf+st) - st $
+	\end{center}	 
+	
+	\hspace{8pt}Após isso, são aplicados a esses pontos a rotação e o deslocamento para ficarem na orientação do robô $ calculo $. Este processo pode ser visto nas figuras \ref{fig:range1} e \ref{fig:range2}.
 
 	\begin{figure}[h]
 		\graphicspath{ {estrategia/} }
@@ -105,7 +113,7 @@
 		\caption{Estrategia}
 	\end{figure}	
 
-	\hspace{8pt} Para limitar um pouco a area de busca foi utilizado metade dos valores obtidos pelos sensores, o resultado pode ser visto nas figuras \ref{fig:metade_range1} e \ref{fig:metade_range2}.
+	\hspace{8pt}Para limitar um pouco a área de busca, foi utilizado metade dos valores obtidos pelos sensores, o resultado pode ser visto nas figuras \ref{fig:metade_range1} e \ref{fig:metade_range2}.
 		
 	\begin{figure}[h]
 		\graphicspath{ {estrategia/} }
@@ -125,18 +133,19 @@
 	
 	\newpage	
 	
-	\hspace{8pt} Com possivies pontos determinados o algoritimo genetico encontra o melhor ponto entre eles, os parametros utilizados no algoritimos foram:
-	\normalsize
+	\hspace{8pt}Com possíveis pontos determinados, o Algoritimo Genético encontra o melhor ponto entre eles, os parâmetros utilizados no algorítimo foram:
+	
 	\begin{enumerate}
+	\normalsize
 		\item População: 60 individuos
 		\item Taxa de Elitismo: 30\%
 		\item Taxa de Elitismo: 1\%
 		\item Metodo de Seleção: Torneio
 		\item Metodo de Cruzamento: Média
 		\item Função Fitness: $ \sqrt{(x_r-x)^2-(y_r-y)^2} $
-	\end{enumerate}	
-	
-	\hspace{8pt} Apos a escolha do ponto para onde o robo deve ir, é calculada a velocidade linear e angula.Onde a velocidade angular $ k\frac{\Delta\theta}{\Delta t}  $ e a velocidade linear $ k\frac{\Delta l}{\Delta t}cos(\Delta\theta)  $, isso fica melhor exemplificado na figura \ref{fig:calculoAngulos}.
+	\end{enumerate}
+
+	\hspace{8pt}Após a escolha do ponto para onde o robô deve ir, é calculada a velocidade linear e angular.Onde a velocidade angular $ k\frac{\Delta\theta}{\Delta t}  $ e a velocidade linear $ k\frac{\Delta l}{\Delta t}cos(\Delta\theta)  $, isso fica melhor exemplificado na figura \ref{fig:calculoAngulos}.
 	
 	\begin{figure}[h]
 		\centering
