@@ -7,8 +7,27 @@
 \usepackage{subcaption}
 
 \usepackage{mcode}
+\usepackage{color} %red, green, blue, yellow, cyan, magenta, black, white
+\definecolor{mygreen}{RGB}{28,172,0} % color values Red, Green, Blue
+\definecolor{mylilas}{RGB}{170,55,241}
 \usepackage{fullpage}
 
+\lstset{language=Matlab,%
+    %basicstyle=\color{red},
+    breaklines=true,%
+    morekeywords={matlab2tikz},
+    keywordstyle=\color{blue},%
+    morekeywords=[2]{1}, keywordstyle=[2]{\color{black}},
+    identifierstyle=\color{black},%
+    stringstyle=\color{mylilas},
+    commentstyle=\color{mygreen},%
+    showstringspaces=false,%without this there will be a symbol in the places where there is a space
+    numbers=left,%
+    numberstyle={\tiny \color{black}},% size of the numbers
+    numbersep=9pt, % this defines how far the numbers are from the text
+    emph=[1]{for,end,break},emphstyle=[1]\color{red}, %some words to emphasise
+    %emph=[2]{word1,word2}, emphstyle=[2]{style},    
+}
 \begin{document}
 	\begin{titlepage}
 	\centering
@@ -36,10 +55,10 @@
 	\tableofcontents
 	\newpage
 	\section{Resumo}
-	\paragraph{} \hspace{8pt}
-		A problemática é a cerca de um robô, o qual não tem conhecimento prévio do ambiente que se encontra. O seu objetivo é se deslocar de um ponto de origem até um ponto de destino, os quais são coordenadas conhecidas, sem colidir com as paredes.
+	\paragraph{}
+	\hspace{8pt} A problemática é a cerca de um robô, o qual não tem conhecimento prévio do ambiente que se encontra. O seu objetivo é se deslocar de um ponto de origem até um ponto de destino, os quais são coordenadas conhecidas, sem colidir com as paredes. Além disso, o robô faz uso de um sensor para orientá-lo sobre os espaços livres, o sonar.
 		
-		\hspace{8pt}Para isso, fez-se uso do Algoritmo Genético, que tem como finalidade indicar o caminho que o robô deve percorrer no ambiente minimizando ou excluindo as colisões. 
+	\hspace{8pt} Como solução, este trabalho aborda uma das técnicas de busca da Inteligência Artifical: o Algoritmo Genético, que tem como finalidade indicar o caminho que o robô deve percorrer no ambiente minimizando ou excluindo as colisões. 
 		
 	\newpage	
 	\section{Descrição do Problema}
