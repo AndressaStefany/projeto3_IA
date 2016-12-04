@@ -6,10 +6,7 @@
 \usepackage[english,num,USenglish]{isodate}
 \usepackage{subcaption}
 
-
 \usepackage{mcode}
-
-
 \usepackage{fullpage}
 
 \begin{document}
@@ -50,11 +47,11 @@
 	Um robô deve percorrer o seguinte ambiente com a utilização de um sonar, o qual fornece as distâncias livres em sua frente, trás, esquerda e direita.
 	
 	\begin{figure}[h]
-			\graphicspath{ {resultados/} }		
-			\includegraphics[width=15cm]{tabulacao.png}
-			\caption{Cenário}
-			\label{fig:numeros}
-		\end{figure}
+		\graphicspath{ {resultados/} }		
+		\includegraphics[width=15cm]{tabulacao.png}
+		\caption{Cenário}
+		\label{fig:numeros}
+	\end{figure}
 		
 	\paragraph{}\hspace{8pt}
 	Sabendo-se que o robô deve sair do ponto de partida (b1) e chegar a um outro ponto (b2) do ambiente mostrado acima de modo que as colisões sejam mínimas ou inexistentes, percebe-se a problemática, pois o cenário possui obstáculos e não é de conhecimento do robô.
@@ -65,7 +62,25 @@
 	
 	\newpage	
 	\section{Estrategia}
-	    A estrategia utilizada se baseia
+	\paragraph{}
+	\hspace{8pt} Com os valores dos sensores delimita-se os pontos que o robo pode se mover, apos isso o algoritimo genetico escolhe o melhor ponto para o robo ir com base na distancia para o destino. Então é calculado as velocidades necessarias para o robo chegar naquele ponto, e o processo é repetido novamente.
+	
+	\hspace{8pt} Os limites são determinado por um quadrado em volta da posição do robo que foi calculado da seguinte forma  \ref{fig:range1} e \ref{fig:range2} mas para limitar um melhor controle do robo
+	\begin{figure}[h]
+		\graphicspath{ {estrategia/} }
+		\begin{subfigure}[b]{8cm}
+			\includegraphics[width=8cm]{range1.png}
+			\caption{População gerada}
+			\label{fig:range1}
+		\end{subfigure}
+		\quad
+		\begin{subfigure}[b]{8cm}
+			\includegraphics[width=8cm]{range2.png}
+			\caption{População gerada}
+			\label{fig:range2}
+		\end{subfigure}
+		\caption{Estrategia}
+	\end{figure}
 	
 	\newpage
 	\section{Controle Robo}
@@ -81,35 +96,36 @@
 	    
 	\newpage
 	\section{Resultados}
-		\begin{figure}[h]
-			\graphicspath{ {resultados/} }	   
-			\begin{subfigure}[t]{8cm}
-				\includegraphics[width=8cm]{comParcial.png}
-				\label{fig:comParcial}
-				\caption{Caminho percorrido com objetivo parcial}
-			\end{subfigure}
-			\quad				
-	   		\begin{subfigure}[t]{8cm}
-	   			\includegraphics[width=8cm]{populacao.png}
-				\label{fig:populacao}
-				\caption{Populações Geradas}
-	   		\end{subfigure}
-	   		\quad
-	   		\begin{subfigure}[t]{8cm}
-	   			\includegraphics[width=8cm]{melhorInd2.png}
-				\label{fig:melhorInd2}
-				\caption{Melhores Individuos}
-	   		\end{subfigure}
-	   		\quad
-	   		\begin{subfigure}[t]{8cm}
-	   			\includegraphics[width=8cm]{semParcial.png}
-				\label{fig:semParcial}
-				\caption{Caminho percorrido sem objetivo parcial}
-	   		\end{subfigure}
+	\begin{figure}[h]
+		\graphicspath{ {resultados/} }
+		\begin{subfigure}[t]{8cm}
+			\includegraphics[width=8cm]{comParcial.png}
+			\label{fig:comParcial}
+			\caption{Caminho percorrido com objetivo parcial}
+		\end{subfigure}
+		\quad
+	   	\begin{subfigure}[t]{8cm}
+	   		\includegraphics[width=8cm]{populacao.png}
+			\label{fig:populacao}
+			\caption{Populações Geradas}
+	   	\end{subfigure}
+	   	\quad
+	   	\begin{subfigure}[t]{8cm}
+	   		\includegraphics[width=8cm]{melhorInd2.png}
+			\label{fig:melhorInd2}
+			\caption{Melhores Individuos}
+	   	\end{subfigure}
+	   	\quad
+	   	\begin{subfigure}[t]{8cm}
+	   		\includegraphics[width=8cm]{semParcial.png}
+			\label{fig:semParcial}
+			\caption{Caminho percorrido sem objetivo parcial}
+	   	\end{subfigure}
+	   	\caption{A}
 	\end{figure}
 	\newpage
 
-	Projeto 3 IA artigos pesquisados \cite{DUMMY:1, DUMMY:2}
+	Projeto 3 IA  artigos pesquisados \cite{DUMMY:1, DUMMY:2}
 	
 	\bibliographystyle{ieeetr}
 	\bibliography{projeto3}
