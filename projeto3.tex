@@ -82,6 +82,7 @@
 	\newpage	
 	\section{Estrategia}
 	\paragraph{}
+
 	\hspace{8pt}Como se faz necessário que o robô saia do ponto $ b_1 $ e chegue em $ b_2 $, onde o percuso possui obstáculos desconhecidos por ele, fez-se uma estratégia que define outros objetivos durante esse percurso, ou seja, $ b_2 $ será o ponto de chegada global e, ao passo que o robô se desloca, são gerados pontos de chegada locais.
 	
 	\hspace{8pt}Para a escolha das melhores posições que o robô deve assumir e assim possa chegar nos pontos de chegada locais, usa-se os valores do sensor sonar, com esses valores delimita-se os pontos que o robô pode se mover, após isso, o Algoritimo Genético escolhe o melhor ponto para o robô ir com base na distância para o destino. A seguir, são calculadas as velocidades linear e ângular necessárias para o robô chegar naquele ponto, esse processo é repetido várias vezes.
