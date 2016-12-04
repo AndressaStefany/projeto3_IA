@@ -4,6 +4,11 @@
 \usepackage{cite}
 \usepackage{graphicx}
 \usepackage[english,num,USenglish]{isodate}
+\usepackage{subcaption}
+
+\usepackage{listings}
+
+\usepackage{fullpage}
 
 \begin{document}
 	\begin{titlepage}
@@ -27,6 +32,7 @@
 	\printdate{2016-12-04}
 	\end{titlepage}
 	
+	\large
 	\newpage
 	\tableofcontents
 	\newpage
@@ -56,34 +62,51 @@
 	
 	\newpage	
 	\section{Estrategia}
-	    Estrategia Utilizada
+	    A estrategia utilizada se baseia
 	    
 	\newpage
 	\section{Algoritmo Genético}
-	    Algorítimo utilizado e propriedades
-	    
+	Algorítimo utilizado e propriedades\\
+    \lstinputlisting{iRobotCreateSimulatorToolbox/Individuo.m}	    
+	\newpage
+    \lstinputlisting{iRobotCreateSimulatorToolbox/Populacao.m}
+	\newpage
+	\lstinputlisting{iRobotCreateSimulatorToolbox/controle.m}    
+    
 	\newpage
 	\section{Controle Robo}
 	    Como o robô é controlado
 	    
 	\newpage
 	\section{Resultados}
-	    \begin{figure}[h]
-			\graphicspath{ {resultados/} }	   		
-	   		\centering
-			\includegraphics[width=10cm]{comParcial.png}
-			\label{fig:comParcial}
-			\caption{Caminho percorrido}
-		\end{figure}
+		\begin{figure}[h]
+			\graphicspath{ {resultados/} }	   
+			\begin{subfigure}[t]{8cm}
+				\includegraphics[width=8cm]{comParcial.png}
+				\label{fig:comParcial}
+				\caption{Caminho percorrido}
+			\end{subfigure}
+			\quad				
+	   		\begin{subfigure}[t]{8cm}
+	   			\includegraphics[width=8cm]{populacao.png}
+				\label{fig:populacao}
+				\caption{Populações Geradas}
+	   		\end{subfigure}
+	   		\quad
+	   		\begin{subfigure}[t]{8cm}
+	   			\includegraphics[width=8cm]{melhorInd2.png}
+				\label{fig:populacao}
+				\caption{Melhores Individuos}
+	   		\end{subfigure}
+	   		\quad
+	   		\begin{subfigure}[t]{8cm}
+	   			\includegraphics[width=8cm]{melhorInd2.png}
+				\label{fig:populacao}
+				\caption{Melhores Individuos}
+	   		\end{subfigure}
+	\end{figure}
 	\newpage
-	\begin{figure}[h]
-			\graphicspath{ {resultados/} }	   		
-	   		\centering
-			\includegraphics[width=10cm]{populacao.png}
-			\label{fig:populacao}
-			\caption{Populações Geradas}
-	\end{figure}	
-	
+
 	Projeto 3 IA artigos pesquisados \cite{DUMMY:1, DUMMY:2}
 	
 	\bibliographystyle{ieeetr}
