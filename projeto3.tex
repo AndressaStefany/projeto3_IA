@@ -90,6 +90,7 @@
 	\hspace{8pt}Para a escolha das melhores posições que o robô deve assumir e assim possa chegar nos objetivos parciais, usa-se os valores do sensor sonar, com esses valores delimita-se os pontos que o robô pode se mover, após isso, o Algoritimo Genético escolhe o melhor ponto para o robô ir com base na distância para o destino. A seguir, são calculadas as velocidades linear e ângular necessárias para o robô chegar naquele ponto, esse processo é repetido várias vezes.
 	
 	\hspace{8pt}Os limites são determinados por um quadrado em volta da posição do robô que foi calculado com os valores dos sensores, frente(se), trás(st), direito(sd), esquerdo(se), criando duas variáveis aleatórias, a e b, e fazendo elas variarem entre 0 e 1, calculamos os possíveis pontos x e y que o robô pode ir da seguinte forma:
+
 	\begin{center}	
 	 	$ y = a*(se+sd) - sd $ e $ x = b*(sf+st) - st $
 	\end{center}	 
@@ -156,10 +157,12 @@
 	
 	\newpage
 	\section{Codigos Fonte Implementados}
-	Algorítimo utilizado e propriedades\\
+	Individuo da população
     \lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/Individuo.m}
+    População
     \lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/Populacao.m}
 	\newpage
+	Controle do rôbo
 	\lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/controle.m}    
 	    
 	\newpage
