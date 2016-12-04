@@ -82,9 +82,11 @@
 	\newpage	
 	\section{Estrategia}
 	\paragraph{}
-	\hspace{8pt} Com os valores dos sensores delimita-se os pontos que o robo pode se mover, apos isso o algoritimo genetico escolhe o melhor ponto para o robo ir com base na distancia para o destino. Então é calculado as velocidades necessarias para o robo chegar naquele ponto, e o processo é repetido novamente.
+	\hspace{8pt}Como se faz necessário que o robô saia do ponto b1 e chegue em b2, onde o percuso possui obstáculos desconhecidos por ele, fez-se uma estratégia que define outros objetivos durante esse percurso, ou seja, b2 será o ponto de chegada global e, ao passo que o robô se desloca, são gerados pontos de chegada locais.
 	
-	\hspace{8pt} Os limites são determinado por um quadrado em volta da posição do robo que foi calculado da seguinte forma $ f(2)=3 $  \ref{fig:range1} e \ref{fig:range2} mas para limitar um melhor controle do robo
+	 \hspace{8pt}Para a escolha das melhores posições que o robô deve assumir e assim possa chegar nos pontos de chegada locais, usa-se os valores do sensor sonar, com esses valores delimita-se os pontos que o robô pode se mover, após isso, o Algoritimo Genético escolhe o melhor ponto para o robô ir com base na distância para o destino. A seguir, são calculadas as velocidades linear e ângular necessárias para o robô chegar naquele ponto, esse processo é repetido várias vezes.
+	
+	\hspace{8pt}Os limites são determinado por um quadrado em volta da posição do robô que foi calculado da seguinte forma $ f(2)=3 $  \ref{fig:range1} e \ref{fig:range2} mas para limitar um melhor controle do robô.
 	\begin{figure}[h]
 		\graphicspath{ {estrategia/} }
 		\begin{subfigure}[b]{8cm}
