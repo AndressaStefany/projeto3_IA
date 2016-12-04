@@ -32,11 +32,11 @@
 	\newpage
 	\section{Resumo}
 	\paragraph{} \hspace{8pt}
-		A problemática é a cerca de um robô o qual não tem conhecimento prévio do ambiente que se encontra. O seu objetivo é se deslocar de um ponto de origem até um ponto de destino, os quais são coordenadas conhecidas, sem colidir com as paredes.
+		A problemática é a cerca de um robô, o qual não tem conhecimento prévio do ambiente que se encontra. O seu objetivo é se deslocar de um ponto de origem até um ponto de destino, os quais são coordenadas conhecidas, sem colidir com as paredes.
 		
-		\hspace{8pt}Para isso, fez-se uso do Algoritmo Genético, o qual tem como finalidade indicar o caminho que o robô deve percorrer no ambiente minimizando ou excluindo as colisões. 
-	\newpage
-	
+		\hspace{8pt}Para isso, fez-se uso do Algoritmo Genético, que tem como finalidade indicar o caminho que o robô deve percorrer no ambiente minimizando ou excluindo as colisões. 
+		
+	\newpage	
 	\section{Descrição do Problema}
 	\paragraph{} \hspace{8pt}
 	Um robô deve percorrer o seguinte ambiente com a utilização de um sonar, o qual fornece as distâncias livres em sua frente, trás, esquerda e direita.
@@ -49,10 +49,11 @@
 		\end{figure}
 		
 	\paragraph{}\hspace{8pt}
-	Sabendo-se que o robô deve sair do ponto de partida (b1) e chegar a um outro ponto (b2) do ambiente mostrado acima de modo que as colisões sejam mínimas ou inexistentes, no entanto, esse cenário possui obstáculos e não é de conhecimento do robô.
+	Sabendo-se que o robô deve sair do ponto de partida (b1) e chegar a um outro ponto (b2) do ambiente mostrado acima de modo que as colisões sejam mínimas ou inexistentes, percebe-se a problemática, pois o cenário possui obstáculos e não é de conhecimento do robô.
 	
-	\hspace{8pt}Para a realização desse percurso, foi utilizado Algoritmo Genético, porém, mesmo assim, pode aparecer o caso em que o robô tenta atravessar parede, ou até mesmo, ande de forma adjacente à parede.	
-	\hspace{8pt}A principal dificuldade é encontrar as melhores posições que o robô pode assumir levando em conta os limites de espaço, que nessa caso, são paredes do cenário.
+	\hspace{8pt}Para a realização desse percurso, foi utilizado Algoritmo Genético, porém, mesmo assim, pode aparecer o caso em que o robô tenta atravessar a parede, como também, ande de forma adjacente à parede.	
+	
+	\hspace{8pt}A principal dificuldade é encontrar as melhores posições que o robô pode assumir levando-se em conta os limites do espaço, que nesse caso, são as paredes presentes no cenário.
 	
 	\newpage	
 	\section{Estrategia}
