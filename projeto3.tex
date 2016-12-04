@@ -87,7 +87,7 @@
 	
 	\hspace{8pt}Para a escolha das melhores posições que o robô deve assumir e assim possa chegar nos pontos de chegada locais, usa-se os valores do sensor sonar, com esses valores delimita-se os pontos que o robô pode se mover, após isso, o Algoritimo Genético escolhe o melhor ponto para o robô ir com base na distância para o destino. A seguir, são calculadas as velocidades linear e ângular necessárias para o robô chegar naquele ponto, esse processo é repetido várias vezes.
 	
-	\hspace{8pt} Os limites são determinado por um quadrado em volta da posição do robo que foi calculado da seguinte forma, com os valores dos sensores, frente(se), traz(st), direito(sd), esquerdo(se), criando duas variaveis aleatorias a e b e fazendo elas variarem entre 0 e 1 calculamos os possiveis pontos x e y que o robo pode ir da seguinte forma $ y = a*(se+sd) - sd $ e $ x = b*(sf+st) - st $ apos isso são aplicados a esses pontos a rotação e o deslocamento para ficarem na orientação do robo $ calculo $. Este processo pode ser visto nas figuras \ref{fig:range1} e \ref{fig:range2}.
+	\hspace{8pt} Os limites são determinado por um quadrado em volta da posição do robo que foi calculado da seguinte forma, com os valores dos sensores, frente(se), traz(st), direito(sd), esquerdo(se), criando duas variaveis aleatorias a e b e fazendo elas variarem entre 0 e 1 calculamos os possiveis pontos x e y que o robo pode ir da seguinte forma $ y = a(se+sd) - sd $ e $ x = b(sf+st) - st $ apos isso são aplicados a esses pontos a rotação e o deslocamento para ficarem na orientação do robo. Assim os novos pontos $ x' $ e $ y ' $ são $ x'= xcos(ang\_robo)-ysin(ang\_robo)+pos\_robo $ e $ y'= xsin(ang\_robo)+ycos(ang\_robo)+pos\_robo $. Este processo pode ser visto nas figuras \ref{fig:range1} e \ref{fig:range2}.
 
 	\begin{figure}[h]
 		\graphicspath{ {estrategia/} }
@@ -134,8 +134,8 @@
 		\item Metodo de Seleção: Torneio
 		\item Metodo de Cruzamento: Média
 		\item Função Fitness: $ \sqrt{(x_r-x)^2-(y_r-y)^2} $
-	\end{enumerate}
-
+	\end{enumerate}	
+	
 	\hspace{8pt} Apos a escolha do ponto para onde o robo deve ir, é calculada a velocidade linear e angula.Onde a velocidade angular $ k\frac{\Delta\theta}{\Delta t}  $ e a velocidade linear $ k\frac{\Delta l}{\Delta t}cos(\Delta\theta)  $, isso fica melhor exemplificado na figura \ref{fig:calculoAngulos}.
 	
 	\begin{figure}[h]
@@ -148,10 +148,12 @@
 	
 	\newpage
 	\section{Codigos Fonte Implementados}
-	Algorítimo utilizado e propriedades\\
+	Individuo da população
     \lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/Individuo.m}
+    População
     \lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/Populacao.m}
 	\newpage
+	Controle do rôbo
 	\lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/controle.m}    
 	    
 	\newpage
