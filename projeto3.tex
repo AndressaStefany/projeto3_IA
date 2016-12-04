@@ -95,8 +95,13 @@
 	 	$ y = a*(se+sd) - sd $ e $ x = b*(sf+st) - st $
 	\end{center}	 
 	
-	\hspace{8pt}Após isso, são aplicados a esses pontos a rotação e o deslocamento para ficarem na orientação do robô $ calculo $. Este processo pode ser visto nas figuras \ref{fig:range1} e \ref{fig:range2}.
-
+	\hspace{8pt}Após isso, são aplicados a esses pontos a rotação e o deslocamento para ficarem na orientação do robô.Assim os novos pontos $ x' $ e $ y ' $ são:
+	\begin{center}
+	 $ x'= x*cos(ang\_robo)-y*sin(ang\_robo)+pos\_robo $
+	 $ y'= x*sin(ang\_robo)+y*cos(ang\_robo)+pos\_robo $
+	\end{center}	
+	\hspace{8pt}Este processo pode ser visto nas figuras \ref{fig:range1} e \ref{fig:range2}.
+	
 	\begin{figure}[h]
 		\graphicspath{ {estrategia/} }
 		\begin{subfigure}[b]{8cm}
@@ -136,10 +141,10 @@
 	\hspace{8pt}Com possíveis pontos determinados, o Algoritimo Genético encontra o melhor ponto entre eles, os parâmetros utilizados no algorítimo foram:
 	
 	\begin{enumerate}
-	\normalsize
+		\normalsize
 		\item População: 60 individuos
 		\item Taxa de Elitismo: 30\%
-		\item Taxa de Elitismo: 1\%
+		\item Taxa de Mutação: 1\%
 		\item Metodo de Seleção: Torneio
 		\item Metodo de Cruzamento: Média
 		\item Função Fitness: $ \sqrt{(x_r-x)^2-(y_r-y)^2} $
@@ -175,9 +180,43 @@
 			\caption{Caminho percorrido com objetivo parcial}
 		\end{subfigure}
 		\quad
+		\begin{subfigure}[t]{8cm}
+	   		\includegraphics[width=8cm]{semParcial.png}
+			\label{fig:semParcial}
+			\caption{Caminho percorrido sem objetivo parcial}
+	   	\end{subfigure}
+	   	\quad
 	   	\begin{subfigure}[t]{8cm}
 	   		\includegraphics[width=8cm]{populacao.png}
 			\label{fig:populacao}
+			\caption{Populações Geradas}
+	   	\end{subfigure}
+	   	\quad
+	   	\begin{subfigure}[t]{8cm}
+	   		\includegraphics[width=8cm]{melhorInd.png}
+			\label{fig:melhorInd}
+			\caption{Melhores Individuos}
+	   	\end{subfigure}
+	   	\caption{Percurso do rôbo}
+	\end{figure}
+	\newpage
+	\begin{figure}[h]
+		\graphicspath{ {resultados/} }
+		\begin{subfigure}[t]{8cm}
+			\includegraphics[width=8cm]{comParcial2.png}
+			\label{fig:comParcial2}
+			\caption{Caminho percorrido com objetivo parcial}
+		\end{subfigure}
+		\quad
+		\begin{subfigure}[t]{8cm}
+	   		\includegraphics[width=8cm]{semParcial2.png}
+			\label{fig:semParcial2}
+			\caption{Caminho percorrido sem objetivo parcial}
+	   	\end{subfigure}
+	   	\quad
+	   	\begin{subfigure}[t]{8cm}
+	   		\includegraphics[width=8cm]{populacao2.png}
+			\label{fig:populacao2}
 			\caption{Populações Geradas}
 	   	\end{subfigure}
 	   	\quad
@@ -186,16 +225,10 @@
 			\label{fig:melhorInd2}
 			\caption{Melhores Individuos}
 	   	\end{subfigure}
-	   	\quad
-	   	\begin{subfigure}[t]{8cm}
-	   		\includegraphics[width=8cm]{semParcial.png}
-			\label{fig:semParcial}
-			\caption{Caminho percorrido sem objetivo parcial}
-	   	\end{subfigure}
-	   	\caption{A}
-	\end{figure}
+	   	\caption{Percurso do rôbo}
+	\end{figure}	
+	
 	\newpage
-
 	Projeto 3 IA  artigos pesquisados \cite{DUMMY:1, DUMMY:2}
 	
 	\bibliographystyle{ieeetr}
