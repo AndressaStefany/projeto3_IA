@@ -6,7 +6,9 @@
 \usepackage[english,num,USenglish]{isodate}
 \usepackage{subcaption}
 
-\usepackage{listings}
+
+\usepackage{mcode}
+
 
 \usepackage{fullpage}
 
@@ -64,19 +66,18 @@
 	\newpage	
 	\section{Estrategia}
 	    A estrategia utilizada se baseia
-	    
-	\newpage
-	\section{Algoritmo Genético}
-	Algorítimo utilizado e propriedades\\
-    \lstinputlisting{iRobotCreateSimulatorToolbox/Individuo.m}	    
-	\newpage
-    \lstinputlisting{iRobotCreateSimulatorToolbox/Populacao.m}
-	\newpage
-	\lstinputlisting{iRobotCreateSimulatorToolbox/controle.m}    
-    
+	
 	\newpage
 	\section{Controle Robo}
-	    Como o robô é controlado
+	    Como o robô é controlado	
+	
+	\newpage
+	\section{Codigos Fonte Implementados}
+	Algorítimo utilizado e propriedades\\
+    \lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/Individuo.m}
+    \lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/Populacao.m}
+	\newpage
+	\lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/controle.m}    
 	    
 	\newpage
 	\section{Resultados}
@@ -85,7 +86,7 @@
 			\begin{subfigure}[t]{8cm}
 				\includegraphics[width=8cm]{comParcial.png}
 				\label{fig:comParcial}
-				\caption{Caminho percorrido}
+				\caption{Caminho percorrido com objetivo parcial}
 			\end{subfigure}
 			\quad				
 	   		\begin{subfigure}[t]{8cm}
@@ -96,14 +97,14 @@
 	   		\quad
 	   		\begin{subfigure}[t]{8cm}
 	   			\includegraphics[width=8cm]{melhorInd2.png}
-				\label{fig:populacao}
+				\label{fig:melhorInd2}
 				\caption{Melhores Individuos}
 	   		\end{subfigure}
 	   		\quad
 	   		\begin{subfigure}[t]{8cm}
-	   			\includegraphics[width=8cm]{melhorInd2.png}
-				\label{fig:populacao}
-				\caption{Melhores Individuos}
+	   			\includegraphics[width=8cm]{semParcial.png}
+				\label{fig:semParcial}
+				\caption{Caminho percorrido sem objetivo parcial}
 	   		\end{subfigure}
 	\end{figure}
 	\newpage
