@@ -167,6 +167,18 @@
 		\label{fig:calculoAngulos}
 	\end{figure}
 	
+	\hspace{8pt}Com relação aos objetivos parciais, estes foram determinados ao longo da trajetória que o robô deve seguir, como pode ser observado na figura \ref{fig:obj_parciais}.
+	
+	\begin{figure}[h]
+		\centering
+		\graphicspath{ {estrategia/} }
+			\includegraphics[width=8cm]{obj_parciais.png}
+			\caption{Objetivos Parciais}
+			\label{fig:obj_parciais}
+	\end{figure}
+	
+	\hspace{8pt}Para chegar no objetivo final, o robô procura o primeiro objetivo parcial, o qual é o mais próximo dele, quando o robô chega nessa posição, a sua meta muda para o próximo objetivo parcial e assim sucessivamente, até que ele alcance o objetivo global, sendo esse o critério de parada do Algoritmo Genético.
+	
 	\newpage
 	\section{Codigos Fonte Implementados}
 	Individuo da população
