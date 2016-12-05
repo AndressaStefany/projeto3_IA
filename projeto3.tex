@@ -3,7 +3,6 @@
 \usepackage[latin1]{inputenc}
 \usepackage{cite}
 \usepackage{graphicx}
-\usepackage{float}
 \usepackage[english,num,USenglish]{isodate}
 \usepackage{subcaption}
 
@@ -140,7 +139,6 @@
 	\newpage	
 	
 	\hspace{8pt}Com possíveis pontos determinados, o Algoritimo Genético encontra o melhor ponto entre eles, apos 30 gerações escolhendo o melhor individuo, os parâmetros utilizados no algorítimo foram:
-	
 	\begin{enumerate}
 		\normalsize
 		\item População: 60 individuos
@@ -151,20 +149,20 @@
 		\item Função Fitness: $ \sqrt{(x_r-x)^2-(y_r-y)^2} $
 	\end{enumerate}
 
-	\begin{figure}[H]
+	\begin{figure}[h]
 		\centering
-		\graphicspath{ {resultados/} }
-		\includegraphics[width=8cm]{res3.png}
-		\caption{Melhores Individuos}
-		\label{fig:res3}
-	\end{figure}
+		\graphicspath{ {estrategia/} }
+		\includegraphics[width=5cm]{calculoAngulos.png}
+		\caption{Calculo dos angulos}
+		\label{fig:calculoAngulos}
+	\end{figure}	
 	
 	\hspace{8pt}Após a escolha do ponto para onde o robô deve ir, é calculada a velocidade linear e angular.Onde a velocidade angular $ k\frac{\Delta\theta}{\Delta t}  $ e a velocidade linear $ k\frac{\Delta l}{\Delta t}cos(\Delta\theta)  $, isso fica melhor exemplificado na figura \ref{fig:calculoAngulos}.
 	
 	\begin{figure}[h]
 		\centering
 		\graphicspath{ {estrategia/} }
-		\includegraphics[width=10cm]{calculoAngulos.png}
+		\includegraphics[width=5cm]{calculoAngulos.png}
 		\caption{Calculo dos angulos}
 		\label{fig:calculoAngulos}
 	\end{figure}
@@ -179,7 +177,7 @@
 			\label{fig:obj_parciais}
 	\end{figure}
 	
-	\hspace{8pt}Para chegar no objetivo final, o robô procura o primeiro objetivo parcial, o qual é o mais próximo dele, quando o robô chega nessa posição, a sua meta muda para o próximo objetivo parcial e assim sucessivamente, até que ele alcance o objetivo global, sendo esse o critério de parada do Algoritmo Genético.
+	\hspace{8pt}Para chegar no objetivo final, o robô procura o primeiro objetivo parcial, o qual é o mais próximo dele, quando o robô chega nessa posição, a sua meta muda para o próximo objetivo parcial e assim sucessivamente, até que ele alcance o objetivo global, sendo esse o critério de parada do robô.
 	
 	\newpage
 	\section{Codigos Fonte Implementados}
