@@ -182,10 +182,10 @@
 	\hspace{8pt}Para chegar no objetivo final, foram desenvolvidas duas formas, na primeira, o robô procura o primeiro objetivo parcial, o qual é o mais próximo dele, quando o robô chega nessa posição, a sua meta muda para o próximo objetivo parcial e assim sucessivamente, até que ele alcance o objetivo global, sendo esse o critério de parada do robô; na segunda, o robô só tem conhecimento da posição inicial e final do destino.
 	
 	\newpage
-	\section{Codigos Fonte Implementados}
-	Individuo da população
+	\section{Códigos Fonte Implementados}
+	Classe indivíduo da população
     \lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/Individuo.m}
-    População
+    Classe População
     \lstinputlisting[breaklines=true]{iRobotCreateSimulatorToolbox/Populacao.m}
 	\newpage
 	Controle do rôbo
@@ -193,6 +193,8 @@
 	    
 	\newpage
 	\section{Resultados}
+	\paragraph{}
+	\hspace{8pt}Abaixo, nas figuras \ref{fig:semParcial} e \ref{fig:comParcial} pode ser observado o percurso que o robô realiazou utilizando objetivos parciais, como também, utilizando apenas o objetivo global. No primeiro caso, nota-se que a trajetória é muito mais reta, enquanto que no segundo, o percurso se tornou bastante curvilinho, extinguindo ainda mais a chance do robô colidir.
 	\begin{figure}[h]
 		\graphicspath{ {resultados/} }
 		\begin{subfigure}[t]{8cm}
@@ -220,7 +222,11 @@
 	   	\end{subfigure}
 	   	\caption{Percurso do rôbo}
 	\end{figure}
+	
+	\hspace{8pt}Na imagem \ref{fig:populacao} é exibido a população que o algoritmo está gerando, e na \ref{fig:melhorInd} apresenta os melhores indivíduos, ou seja, as posições que o robô assumiu.
 	\newpage
+	\paragraph{}
+	\hspace{8pt}Abaixo, é apresentado um outro exemplo do comportamento do robô utilizando o Algoritmo Genético.\\
 	\begin{figure}[h]
 		\graphicspath{ {resultados/} }
 		\begin{subfigure}[t]{8cm}
